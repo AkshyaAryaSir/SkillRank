@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>SkillRank – Skill Verification & Hiring Readiness Platform</title>
+  <title>SkillRank – Skill Verification Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/theme.css">
 </head>
@@ -9,53 +9,50 @@
 <body>
 
 <!-- HEADER -->
-<header style="padding:20px 40px; display:flex; justify-content:space-between; align-items:center;">
-  <h2>🚀 SkillRank</h2>
-  <nav>
-    <a href="#features" style="margin-right:20px;">Features</a>
+<header class="header">
+  <div class="logo">🚀 SkillRank</div>
+  <nav class="nav">
+    <a href="#features">Features</a>
     <a href="#how">How it Works</a>
-    <a href="login.html" style="margin-left:25px;">Login</a>
-    <a href="signup.html" style="margin-left:15px;">Signup</a>
+    <button class="nav-btn" onclick="openPopup()">Login / Signup</button>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="container">
-  <div class="card" style="text-align:center;">
+  <div class="card hero">
     <h1>Verify Skills. Rank Talent. Hire Smarter.</h1>
     <p class="brand">
-      India’s next-gen Skill Assessment & Ranking Platform for Students, Trainers & Recruiters
+      Secure Skill Assessment & Ranking Platform for Students, Trainers & Recruiters
     </p>
 
-    <button onclick="location.href='signup.html'">Get Started Free</button>
+    <button onclick="openPopup()">Get Started</button>
   </div>
 </section>
 
 <!-- FEATURES -->
 <section id="features" class="container">
   <div class="card">
-    <h2>Why SkillRank?</h2>
-
-    <ul style="line-height:2;">
-      <li>✅ Secure Online Skill Tests</li>
-      <li>✅ AI-Based Evaluation & Ranking</li>
-      <li>✅ Verified Certificates</li>
-      <li>✅ Recruiter-Ready Profiles</li>
-      <li>✅ Role-Based Access (Student / Trainer / Admin)</li>
+    <h2>Platform Features</h2>
+    <ul class="list">
+      <li>✔ Role-Based Access (Student / Trainer / Recruiter)</li>
+      <li>✔ Online Secure Skill Tests</li>
+      <li>✔ Auto Ranking & Result Engine</li>
+      <li>✔ Verified Certificates</li>
+      <li>✔ Recruiter Friendly Profiles</li>
     </ul>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- HOW -->
 <section id="how" class="container">
   <div class="card">
-    <h2>How It Works</h2>
-
-    <ol style="line-height:2;">
-      <li>Signup & Choose Your Role</li>
-      <li>Attempt Skill Tests</li>
+    <h2>How SkillRank Works</h2>
+    <ol class="list">
+      <li>Create Account</li>
+      <li>Select Role</li>
+      <li>Take Skill Tests</li>
       <li>Get Ranked & Certified</li>
-      <li>Share Profile with Employers</li>
     </ol>
   </div>
 </section>
@@ -68,6 +65,28 @@
     <div class="tagline">Secure • Verified • Trusted</div>
   </div>
 </footer>
+
+<!-- POPUP MODAL -->
+<div id="popup" class="popup">
+  <div class="popup-card">
+    <span class="close" onclick="closePopup()">✖</span>
+
+    <h2>Welcome to SkillRank</h2>
+    <p class="brand">Choose your action</p>
+
+    <button onclick="location.href='login.html'">Login</button>
+    <button onclick="location.href='signup.html'" style="margin-top:10px;">Signup</button>
+  </div>
+</div>
+
+<script>
+function openPopup(){
+  document.getElementById("popup").style.display="flex";
+}
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
 
 </body>
 </html>
