@@ -94,3 +94,24 @@ button:disabled{
   font-size:11px;
   color:var(--muted);
 }
+.footer{
+  margin-top:30px;
+  padding-top:18px;
+  border-top:1px solid rgba(148,163,184,0.15);
+  text-align:center;
+  font-size:11px;
+  color:#94a3b8;
+  line-height:1.6;
+}
+
+.footer b{
+  color:#e5e7eb;
+  font-weight:600;
+}
+
+.footer .tagline{
+  margin-top:6px;
+  font-size:11px;
+  color:#60a5fa;
+  letter-spacing:.3px;
+}
