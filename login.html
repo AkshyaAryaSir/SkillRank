@@ -1,27 +1,40 @@
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillRank | Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
-function login() {
-  fetch("YOUR_APPS_SCRIPT_URL", {
-    method: "POST",
-    body: JSON.stringify({
-      action: "LOGIN",
-      data: {
-        email: email.value,
-        password: password.value
-      }
-    })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if(data.success){
-      localStorage.setItem("token", data.token);
-      alert("Login Success");
-    } else {
-      alert(data.message);
-    }
-  });
-}
-</script>
+  <!-- MAIN THEME -->
+  <link rel="stylesheet" href="theme.css">
+</head>
+
+<body>
+<div class="container">
+  <div class="card">
+
+    <h1>🚀 SkillRank</h1>
+    <div class="brand">
+      Skill Verification & Hiring Readiness Platform
+    </div>
+
+    <input id="email" type="email" placeholder="Registered Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button id="btn" onclick="login()">Login</button>
+
+    <div id="msg" class="link"></div>
+
+    <!-- COMMON FOOTER -->
+    <div class="footer">
+      <div>Developed by <b>AKSHAY-AI</b></div>
+      <div>Founder: <b>Akshay Arya</b></div>
+      <div class="tagline">Secure • Verified • Trusted</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>
