@@ -191,3 +191,81 @@ button:disabled{
   .nav a{display:none}
   .hero h1{font-size:22px}
 }
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* MOBILE NAV */
+@media(max-width:700px){
+  .hamburger{display:block}
+  .nav{
+    position:absolute;
+    top:60px;
+    right:20px;
+    background:var(--card);
+    border-radius:12px;
+    padding:20px;
+    display:none;
+    flex-direction:column;
+    gap:15px;
+  }
+  .nav.open{display:flex}
+  .nav a{margin:0}
+}
+
+/* BUTTON EFFECT */
+button{
+  transition:all .25s ease;
+}
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(37,99,235,.35);
+}
+
+/* HERO ANIMATION */
+.animate{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp .7s ease forwards;
+}
+.delay{animation-delay:.2s}
+.delay2{animation-delay:.4s}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* POPUP ANIMATION */
+.popup{
+  display:none;
+}
+.popup.show{
+  display:flex;
+}
+.scale{
+  transform:scale(.9);
+  opacity:0;
+  animation:scaleIn .3s ease forwards;
+}
+@keyframes scaleIn{
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+/* SECONDARY BUTTON */
+.secondary{
+  margin-top:10px;
+  background:#334155;
+}
+.secondary:hover{
+  background:#475569;
+}
