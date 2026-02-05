@@ -1,37 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>SkillRank – Secure Login</title>
+  <title>SkillRank – Skill Verification & Hiring Readiness Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/theme.css">
 </head>
 
 <body>
-<div class="container">
-  <div class="card">
-    <h1>🚀 SkillRank</h1>
-    <div class="brand">Skill Verification & Hiring Readiness Platform</div>
 
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
+<!-- HEADER -->
+<header style="padding:20px 40px; display:flex; justify-content:space-between; align-items:center;">
+  <h2>🚀 SkillRank</h2>
+  <nav>
+    <a href="#features" style="margin-right:20px;">Features</a>
+    <a href="#how">How it Works</a>
+    <a href="login.html" style="margin-left:25px;">Login</a>
+    <a href="signup.html" style="margin-left:15px;">Signup</a>
+  </nav>
+</header>
 
-    <button onclick="login()">Login</button>
+<!-- HERO -->
+<section class="container">
+  <div class="card" style="text-align:center;">
+    <h1>Verify Skills. Rank Talent. Hire Smarter.</h1>
+    <p class="brand">
+      India’s next-gen Skill Assessment & Ranking Platform for Students, Trainers & Recruiters
+    </p>
 
-    <div class="link">
-      New user? <a href="signup.html">Create Account</a>
-    </div>
-
-    <div id="msg" class="link"></div>
-
-    <div class="footer">
-  <div>Developed by <b>AKSHAY-AI</b></div>
-  <div>Founder: <b>Akshay Arya</b></div>
-  <div class="tagline">Secure • Verified • Trusted</div>
-</div>
-
+    <button onclick="location.href='signup.html'">Get Started Free</button>
   </div>
-</div>
+</section>
 
-<script src="js/auth.js"></script>
+<!-- FEATURES -->
+<section id="features" class="container">
+  <div class="card">
+    <h2>Why SkillRank?</h2>
+
+    <ul style="line-height:2;">
+      <li>✅ Secure Online Skill Tests</li>
+      <li>✅ AI-Based Evaluation & Ranking</li>
+      <li>✅ Verified Certificates</li>
+      <li>✅ Recruiter-Ready Profiles</li>
+      <li>✅ Role-Based Access (Student / Trainer / Admin)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="container">
+  <div class="card">
+    <h2>How It Works</h2>
+
+    <ol style="line-height:2;">
+      <li>Signup & Choose Your Role</li>
+      <li>Attempt Skill Tests</li>
+      <li>Get Ranked & Certified</li>
+      <li>Share Profile with Employers</li>
+    </ol>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="container">
+  <div class="card footer">
+    <div>Developed by <b>AKSHAY-AI</b></div>
+    <div>Founder: <b>Akshay Arya</b></div>
+    <div class="tagline">Secure • Verified • Trusted</div>
+  </div>
+</footer>
+
 </body>
 </html>
