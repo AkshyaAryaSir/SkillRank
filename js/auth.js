@@ -1,40 +1,48 @@
-const API = "YOUR_APPS_SCRIPT_URL";
+const API_URL = "YOUR_APPS_SCRIPT_WEBAPP_URL";
 
 function login(){
-  const email = emailEl().value;
-  const password = passEl().value;
-  msg("");
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const msg = document.getElementById("msg");
+  const btn = document.getElementById("btn");
 
-  fetch(API,{
-    method:"POST",
-    body:JSON.stringify({action:"login",email,password})
-  })
-  .then(r=>r.json())
-  .then(d=>{
-    if(d.status==="success"){
-      sessionStorage.setItem("token",d.token);
-      location.href="dashboard.html";
-    }else msg(d.message);
-  });
-}
+  msg.innerText = "";
 
-function signup(){
-  fetch(API,{
+  if(!email || !password){
+    msg.innerText = "❌ Email & Password required";
+    return;
+  }
+
+  btn.disabled = true;
+  msg.innerText = "🔐 Authenticating...";
+
+  fetch(API_URL,{
     method:"POST",
+    headers:{ "Content-Type":"application/json" },
     body:JSON.stringify({
-      action:"signup",
-      name:nameEl().value,
-      email:emailEl().value,
-      password:passEl().value,
-      role:roleEl().value
+      action:"LOGIN",
+      data:{ email, password }
     })
   })
-  .then(r=>r.json())
-  .then(d=>msg(d.message));
-}
+  .then(res=>res.json())
+  .then(res=>{
+    btn.disabled=false;
 
-function msg(t){document.getElementById("msg").innerText=t;}
-const emailEl=()=>document.getElementById("email");
-const passEl=()=>document.getElementById("password");
-const nameEl=()=>document.getElementById("name");
-const roleEl=()=>document.getElementById("role");
+    if(res.success){
+      localStorage.setItem("skillrank_token",res.token);
+      localStorage.setItem("skillrank_role",res.role);
+      msg.innerText="✅ Login successful";
+
+      setTimeout(()=>{
+        location.href = res.role.toLowerCase() + "-dashboard.html";
+      },600);
+
+    }else{
+      msg.innerText="❌ "+res.message;
+    }
+  })
+  .catch(()=>{
+    btn.disabled=false;
+    msg.innerText="❌ Server error";
+  });
+}
