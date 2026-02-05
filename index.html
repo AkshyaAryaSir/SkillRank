@@ -11,7 +11,10 @@
 <!-- HEADER -->
 <header class="header">
   <div class="logo">🚀 SkillRank</div>
-  <nav class="nav">
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <nav class="nav" id="nav">
     <a href="#features">Features</a>
     <a href="#how">How it Works</a>
     <button class="nav-btn" onclick="openPopup()">Login / Signup</button>
@@ -19,39 +22,36 @@
 </header>
 
 <!-- HERO -->
-<section class="container">
-  <div class="card hero">
+<section class="container hero-section">
+  <div class="card hero animate">
     <h1>Verify Skills. Rank Talent. Hire Smarter.</h1>
     <p class="brand">
-      Secure Skill Assessment & Ranking Platform for Students, Trainers & Recruiters
+      Secure Skill Assessment & Ranking Platform
     </p>
-
     <button onclick="openPopup()">Get Started</button>
   </div>
 </section>
 
 <!-- FEATURES -->
 <section id="features" class="container">
-  <div class="card">
+  <div class="card animate delay">
     <h2>Platform Features</h2>
     <ul class="list">
-      <li>✔ Role-Based Access (Student / Trainer / Recruiter)</li>
-      <li>✔ Online Secure Skill Tests</li>
-      <li>✔ Auto Ranking & Result Engine</li>
+      <li>✔ Role-Based Access</li>
+      <li>✔ Secure Online Tests</li>
+      <li>✔ Auto Ranking Engine</li>
       <li>✔ Verified Certificates</li>
-      <li>✔ Recruiter Friendly Profiles</li>
     </ul>
   </div>
 </section>
 
 <!-- HOW -->
 <section id="how" class="container">
-  <div class="card">
+  <div class="card animate delay2">
     <h2>How SkillRank Works</h2>
     <ol class="list">
-      <li>Create Account</li>
-      <li>Select Role</li>
-      <li>Take Skill Tests</li>
+      <li>Signup & Choose Role</li>
+      <li>Attempt Skill Tests</li>
       <li>Get Ranked & Certified</li>
     </ol>
   </div>
@@ -66,25 +66,26 @@
   </div>
 </footer>
 
-<!-- POPUP MODAL -->
+<!-- POPUP -->
 <div id="popup" class="popup">
-  <div class="popup-card">
+  <div class="popup-card scale">
     <span class="close" onclick="closePopup()">✖</span>
-
     <h2>Welcome to SkillRank</h2>
-    <p class="brand">Choose your action</p>
-
+    <p class="brand">Login or create account</p>
     <button onclick="location.href='login.html'">Login</button>
-    <button onclick="location.href='signup.html'" style="margin-top:10px;">Signup</button>
+    <button onclick="location.href='signup.html'" class="secondary">Signup</button>
   </div>
 </div>
 
 <script>
 function openPopup(){
-  document.getElementById("popup").style.display="flex";
+  document.getElementById("popup").classList.add("show");
 }
 function closePopup(){
-  document.getElementById("popup").style.display="none";
+  document.getElementById("popup").classList.remove("show");
+}
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("open");
 }
 </script>
 
